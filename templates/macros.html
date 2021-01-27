@@ -69,7 +69,7 @@
     {% set response = load_data(url=webfinger, format="json") %}
     {% set link = response.links | filter(attribute="rel", value="http://webfinger.net/rel/profile-page") | first %}
     {% set fedi = link.href %}
-    <li class="button {{bsize}} font_faint"><a href="{{fedi}}" target="_blank" >{{extra.fedi}}</a><i class="fab fa-mastodon" ></i></li>
+    <li class="button {{bsize}} font_faint"><a href="{{fedi}}" rel="me" target="_blank" >{{extra.fedi}}</a><i class="fab fa-mastodon" ></i></li>
     {% endif %}
     {% if feed %}
     <li class="button {{bsize}} font_faint"><a href="{{siteurl}}/{{feed_file}}" target ="_blank">{{ feed_file | trim_end_matches(pat=".xml") }}</a><i class="fas fa-rss" ></i></li>
