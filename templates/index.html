@@ -3,12 +3,12 @@
 
 {% block content %}
 <nav>{% include "languages.html" %}</nav>
-<header class="header">
+<header class="header h-card">
     {% block header %}
     <figure class="user_logo">
-        <a href="{{config.base_url}}" style="background-image: url({{config.base_url}}/img/{{config.extra.profile}}"></a>
+        <a class="u-url" href="{{config.base_url}}" style="background-image: url({{config.base_url}}/img/{{config.extra.profile}}"></a>
     </figure>
-    <h2 class="site_title">{{config.title}}</h2>
+    <h2 class="site_title p-name p-org">{{config.title}}</h2>
     <div>{{config.description | markdown(inline=true) | safe }}</div>
     {{ macros::social_list(classes="header_list", bsize="small", extra=config.extra, siteurl=config.base_url, feed=config.generate_feed, feed_file=config.feed_file | default(value="atom.xml")) }}
     {% endblock header %}

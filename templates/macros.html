@@ -81,7 +81,7 @@
 {% macro frontmatter(classes, date, word_count, read_time) %}
 <ul class="frontmatter {{classes}}" id="frontmatter">
     <li>
-        <time class="article_time"  datetime="{{date}}">{{ date | date(format="%B %d, %Y") }}</time>
+        <time class="article_time dt-published"  datetime="{{date}}">{{ date | date(format="%B %d, %Y") }}</time>
     </li>
     <span class="dotDivider"></span>
     <li> {{word_count}} words </li>
